@@ -1,0 +1,8 @@
+2025-03-08T01:22:24.509+0530	INFO	logger/logger.go:450	Logger initialized	{"version": "1.0.0", "startup_time": "2025-03-08T01:22:24.509+0530"}
+2025-03-08T01:22:24.511+0530	INFO	server/main.go:30	Starting IoT Blockchain API Server
+2025-03-08T01:22:24.512+0530	INFO	server/main.go:33	Loading configuration	{"path": "configs/config.yaml"}
+2025-03-08T01:22:24.606+0530	INFO	server/main.go:53	Initializing application
+2025-03-08T01:22:24.606+0530	INFO	server/main.go:103	Starting web dashboard	{"address": "0.0.0.0:8081"}
+2025-03-08T01:22:24.606+0530	INFO	server/main.go:91	API server listening	{"address": "0.0.0.0:8080", "auth_enabled": true}
+2025-03-08T01:33:08.251+0530	INFO	server/main.go:113	Shutting down server	{"signal": "interrupt"}
+2025-03-08T01:33:08.390+0530	INFO	server/main.go:129	Server exited gracefully
