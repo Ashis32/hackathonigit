@@ -65,7 +65,7 @@ func HandleCommand(cmd []protocol.ORSPValue) protocol.ORSPValue {
 	case "IQO-OPTIMIZE":
 		return HandleIntelligenceQueryOptimization(cmd[1:])
 	default:
-		return protocol.ErrorValue("ERR  command: " + commandStr)
+		return protocol.ErrorValue("ERR unknown command: " + commandStr)
 	}
 }
 func handleConnection(conn net.Conn) {
@@ -75,7 +75,7 @@ func handleConnection(conn net.Conn) {
 	for {
 		value, err := protocol.Unmarshal(reader)
 		if err != nil {
-			fmt.Println("Error reading ", err)
+			fmt.Println("Error reading input:", err)
 			return
 		}
 
