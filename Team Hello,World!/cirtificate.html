@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Certificate</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #0a0a0a;
+            font-family: 'Great Vibes', cursive;
+        }
+
+        .image-container {
+            position: relative;
+            width: 90%;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+        }
+
+        /* Positioning the name display */
+        .name-display {
+            position: absolute;
+            top: 50%; /* Center it */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 36px;
+            color: #052363;
+            font-family: 'Great Vibes', cursive;
+            white-space: nowrap; /* Prevents name from breaking into multiple lines */
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Invisible input field for typing */
+        .name-input {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50%;
+            text-align: center;
+            opacity: 0; /* Makes it invisible */
+            pointer-events: all; /* Allows clicking */
+        }
+
+        .name-input input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: transparent;
+            font-size: 36px;
+            text-align: center;
+            font-family: 'Great Vibes', cursive;
+            color: transparent; /* Hides input text */
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hidden certificate template -->
+<div id="certificate" style="display:none; text-align: center; position: relative;">
+    <div class="image-container">
+        <img src="c:\Users\natho\Downloads\OF PARTICIPATION (2).png" alt="Certificate of Participation" style="width: 100%;">
+
+        <!-- Corrected Name Positioning -->
+        <h2 id="studentName" style="
+            position: absolute;
+            top: 32%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 36px;
+            font-family: 'Great Vibes', cursive;
+            color: #052363;
+            white-space: nowrap;
+            width: 100%;
+        "></h2>
+    </div>
+
+    <!-- Corrected Visibility of Text -->
+    <p style="text-align:center; display: none;" id="completionText">has successfully completed the C Language exam with a score of</p>
+    <h3 style="text-align:center; display: none;" id="studentScore"></h3>
+    <p style="text-align:center; display: none;" id="dateText">on <span id="examDate"></span></p>
+    <p style="text-align:center; display: none;" id="issuer">Issued by: Online Exam System</p>
+</div>
+
+
+    <script>
+        // Get input field and display area
+        const nameInput = document.getElementById("nameInput");
+        const certificateName = document.getElementById("certificateName");
+
+        // Update certificate text in real-time
+        nameInput.addEventListener("input", function() {
+            certificateName.textContent = nameInput.value || "Your Name"; // Default text if empty
+        });
+    </script>
+</body>
+</html>
